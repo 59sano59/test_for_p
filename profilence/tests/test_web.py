@@ -3,14 +3,7 @@ from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
-<<<<<<< HEAD
-import os
-import json
 import time
-import pandas as pd
-=======
-import time
->>>>>>> d88911a (test)
 import unittest
 
 class tests(unittest.TestCase):
