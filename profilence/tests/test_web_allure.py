@@ -1,20 +1,18 @@
+import pytest
+import allure
+from allure_commons.types import AttachmentType
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
-<<<<<<< HEAD
-import os
-import json
 import time
-import pandas as pd
-=======
-import time
->>>>>>> d88911a (test)
-import unittest
+# import unittest
 
-class tests(unittest.TestCase):
-
+@allure.severity(allure.severity_level.NORMAL)
+class tests:
+    
+    
     def setUp(self):
         self.driver = webdriver.Chrome()
         self.startTime = time.time()
@@ -24,7 +22,7 @@ class tests(unittest.TestCase):
         print('%s: %.3f' % (self.id(), t))
         assert True
 
-
+    @allure.severity(allure.severity_level.NORMAL)
     def test_developerButton(self):
         driver = self.driver
         driver.get("https:/profilence.com/products/")
@@ -34,6 +32,7 @@ class tests(unittest.TestCase):
         
         assert True
 
+    @allure.severity(allure.severity_level.NORMAL)
     def test_qaButton(self):
         driver = self.driver
         driver.get("https:/profilence.com/products/")
@@ -43,6 +42,7 @@ class tests(unittest.TestCase):
         tqa = self.startTime
         assert True
 
+    @allure.severity(allure.severity_level.NORMAL)
     def test_managementButton(self):
         driver = self.driver
         driver.get("https:/profilence.com/products/")
@@ -52,6 +52,7 @@ class tests(unittest.TestCase):
         tma = self.startTime
         assert True
 
+    @allure.severity(allure.severity_level.NORMAL)
     def test_contact(self):
         driver = self.driver
         driver.get("https:/profilence.com/")
@@ -61,6 +62,7 @@ class tests(unittest.TestCase):
         tcon = self.startTime
         assert True
 
+    @allure.severity(allure.severity_level.NORMAL)
     def test_products(self):
         driver = self.driver
         driver.get("https:/profilence.com/")
@@ -71,6 +73,5 @@ class tests(unittest.TestCase):
         assert True
 
 if __name__ == "__main__":
-    suite = unittest.TestLoader().loadTestsFromTestCase(tests)
-    unittest.TextTestRunner(verbosity=0).run(suite)
+    tests()
     
